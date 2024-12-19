@@ -1,10 +1,9 @@
-import { Button } from "./components/ui/button";
-import { Moon } from "lucide-react";
-
 export function App() {
   return (
     <div className="min-h-screen grid items-center justify-items-center">
-      App
+      <h1 className="text-3xl font-semibold text-foreground-700">
+        Chào Nghĩa!
+      </h1>
     </div>
   );
 }
