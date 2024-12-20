@@ -5,15 +5,16 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-zinc-950 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg]:stroke-2 dark:focus-visible:ring-zinc-300",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap font-semibold focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-zinc-950 disabled:pointer-events-none disabled:opacity-50 [&_svg]:shrink-0 transition-all duration-300 ease-out",
   {
     variants: {
-      variant: {
-        primary: "bg-gradient-primary-01 text-white",
-        danger:
-          "bg-danger-50 dark:bg-flat-danger text-danger-600 dark:text-danger-500",
+      intent: {
+        primary:
+          "bg-primary-500 text-white hover:bg-primary-600 hover:shadow-xl",
         secondary:
-          "bg-background-100 dark:bg-background-700 text-foreground-700 dark:text-foreground-200",
+          "bg-primary-flat text-primary-500 hover:bg-[rgba(29,144,245,0.25)] hover:text-primary-400",
+        danger:
+          "bg-danger-flat text-danger-500 hover:bg-[rgba(239,68,68,0.25)] hover:text-danger-400",
       },
       size: {
         default: "text-base",
@@ -25,43 +26,43 @@ const buttonVariants = cva(
         true: "rounded-full",
       },
     },
-    defaultVariants: {
-      variant: "primary",
-      size: "default",
-      iconOnly: false,
-    },
     compoundVariants: [
       {
-        variant: ["primary", "danger", "secondary"],
+        iconOnly: false,
         size: "default",
-        className: "rounded-2xl py-4 [&_svg]:size-5",
+        className: "px-8 py-4 rounded-6xl [&_svg]:w-6 [&_svg]:h-6",
       },
       {
-        variant: ["primary", "danger", "secondary"],
+        iconOnly: false,
         size: "small",
-        className: "rounded-xl py-3 [&_svg]:size-[1.125rem]",
+        className: "px-8 py-4 rounded-5xl [&_svg]:w-5 [&_svg]:h-5",
       },
       {
-        variant: ["primary", "danger", "secondary"],
+        iconOnly: false,
         size: "extraSmall",
-        className: "rounded-lg py-2 [&_svg]:size-4",
+        className: "px-6 py-3 rounded-4xl [&_svg]:w-5 [&_svg]:h-5",
       },
       {
         iconOnly: true,
         size: "default",
-        className: "w-12 h-12 [&_svg]:size-6",
+        className: "w-12 h-12 [&_svg]:w-6 [&_svg]:h-6",
       },
       {
         iconOnly: true,
         size: "small",
-        className: "w-10 h-10 [&_svg]:size-5",
+        className: "w-10 h-10 [&_svg]:w-5 [&_svg]:h-5",
       },
       {
         iconOnly: true,
         size: "extraSmall",
-        className: "w-8 h-8 [&_svg]:size-4",
+        className: "w-8 h-8 [&_svg]:w-4 [&_svg]:h-4",
       },
     ],
+    defaultVariants: {
+      size: "default",
+      intent: "primary",
+      iconOnly: false,
+    },
   }
 );
 
@@ -72,12 +73,12 @@ export interface ButtonProps
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, iconOnly, asChild = false, ...props }, ref) => {
+  ({ className, intent, size, iconOnly, asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : "button";
 
     return (
       <Comp
-        className={cn(buttonVariants({ variant, size, iconOnly, className }))}
+        className={cn(buttonVariants({ intent, size, iconOnly, className }))}
         ref={ref}
         {...props}
       />
