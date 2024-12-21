@@ -30,32 +30,32 @@ const buttonVariants = cva(
       {
         iconOnly: false,
         size: "default",
-        className: "px-8 py-4 rounded-6xl [&_svg]:w-6 [&_svg]:h-6",
+        className: "px-8 py-4 rounded-6xl [&_svg]:size-6",
       },
       {
         iconOnly: false,
         size: "small",
-        className: "px-8 py-4 rounded-5xl [&_svg]:w-5 [&_svg]:h-5",
+        className: "px-8 py-4 rounded-5xl [&_svg]:size-5",
       },
       {
         iconOnly: false,
         size: "extraSmall",
-        className: "px-6 py-3 rounded-4xl [&_svg]:w-5 [&_svg]:h-5",
+        className: "px-6 py-3 rounded-4xl [&_svg]:size-5",
       },
       {
         iconOnly: true,
         size: "default",
-        className: "w-12 h-12 [&_svg]:w-6 [&_svg]:h-6",
+        className: "size-12 [&_svg]:size-6",
       },
       {
         iconOnly: true,
         size: "small",
-        className: "w-10 h-10 [&_svg]:w-5 [&_svg]:h-5",
+        className: "size-10 [&_svg]:size-5",
       },
       {
         iconOnly: true,
         size: "extraSmall",
-        className: "w-8 h-8 [&_svg]:w-4 [&_svg]:h-4",
+        className: "size-8 [&_svg]:size-4",
       },
     ],
     defaultVariants: {

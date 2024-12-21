@@ -3,21 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-  /* @font-face {
-    font-family: "Inter";
-    font-weight: 100 900;
-    font-display: swap;
-    src: url("./assets/fonts/Inter-VariableFont_opsz_wght.woff2")
-      format("woff2");
-  }
-  @font-face {
-    font-family: "Inter Italic";
-    font-weight: 100 900;
-    font-display: swap;
-    src: url("./assets/fonts/Inter-Italic-VariableFont_opsz_wght.woff2")
-      format("woff2");
-  } */
-
   @font-face {
     font-family: "Poppins";
     font-style: normal;
@@ -164,5 +149,7 @@
 
   html {
     font-family: "Poppins", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
